@@ -844,7 +844,7 @@ footer p{color:var(--muted);font-size:.8rem}
         </div>
         <div class="fr">
           <div class="fg"><label>Email *</label><input type="email" name="email" placeholder="you@company.com" required></div>
-          <div class="fg"><label>WhatsApp / Phone</label><input type="tel" name="phone" placeholder="+91 98765 43210"></div>
+          <div class="fg"><label>WhatsApp / Phone</label><input type="tel" name="phone" placeholder="+91 80729 90862"></div>
         </div>
         <div class="fr">
           <div class="fg"><label>Team Size</label><select name="team_size"><option value="">Select size</option><option>1–10</option><option>11–50</option><option>51–200</option><option>200+</option></select></div>
@@ -858,7 +858,7 @@ footer p{color:var(--muted);font-size:.8rem}
       </form>
       <div class="ci rev-r">
         <div class="ci-card"><div class="ci-ico" style="background:linear-gradient(135deg,rgba(37,99,235,.3),rgba(29,78,216,.2))">📧</div><div><h4>Email</h4><p>info@ScaleFastX.com</p></div></div>
-        <div class="ci-card"><div class="ci-ico" style="background:linear-gradient(135deg,rgba(37,211,102,.3),rgba(18,140,126,.2))">💬</div><div><h4>WhatsApp</h4><p><a href="https://wa.me/918072990862" target="_blank" style="color:var(--white);text-decoration:none">+91 98765 43210</a></p></div></div>
+        <div class="ci-card"><div class="ci-ico" style="background:linear-gradient(135deg,rgba(37,211,102,.3),rgba(18,140,126,.2))">💬</div><div><h4>WhatsApp</h4><p><a href="https://wa.me/918072990862" target="_blank" style="color:var(--white);text-decoration:none">+91 80729 90862</a></p></div></div>
         <div class="ci-card"><div class="ci-ico" style="background:linear-gradient(135deg,rgba(10,102,194,.3),rgba(0,79,157,.2))">🔗</div><div><h4>LinkedIn</h4><p><a href="https://linkedin.com" target="_blank" style="color:var(--white);text-decoration:none">Founder Profile →</a></p></div></div>
         <div class="ci-card"><div class="ci-ico" style="background:linear-gradient(135deg,rgba(16,185,129,.2),rgba(16,185,129,.08))">❤️</div><div><h4>5% Impact Pledge</h4><p>Every client helps change lives</p></div></div>
         <div style="display:flex;align-items:center;gap:10px;padding:14px 18px;border-radius:11px;background:var(--glass);border:1px solid var(--border)"><span style="font-size:1.2rem">⚡</span><div><div style="font-size:.78rem;font-weight:700;color:var(--gold)">We respond within 24 hours</div><div style="font-size:.75rem;color:var(--muted)">Usually much faster on WhatsApp</div></div></div>
@@ -1043,7 +1043,7 @@ function miniConfetti(){
 /* ── WHATSAPP BOT ── */
 const waBotReplies={
   pricing:'We have 4 plans:\n\n• <strong>Basic</strong> – ₹40,000/mo: CRM + pipeline setup\n• <strong>Pro</strong> – ₹70,000/mo: Full automation + training\n• <strong>Premium</strong> – ₹1,00,000/mo: Complete transformation\n• <strong>Enterprise</strong> – Custom: Multi-market GTM\n\nAll plans include a 30-day results guarantee! 🎯',
-  call:'Great choice! Book your FREE 45-min strategy call:\n\n👉 <a href="#contact" onclick="closeWABot()" style="color:#4ADE80">Fill the contact form</a>\n\nOr WhatsApp us directly: <strong>+91 98765 43210</strong> 📞',
+  call:'Great choice! Book your FREE 45-min strategy call:\n\n👉 <a href="#contact" onclick="closeWABot()" style="color:#4ADE80">Fill the contact form</a>\n\nOr WhatsApp us directly: <strong>+91 80729 90862</strong> 📞',
   services:'We specialize in:\n\n🏗️ CRM Architecture & Pipeline\n🎯 Sales Team Training\n🤖 Follow-up Automation\n📊 KPI Dashboard Design\n🌍 GTM Strategy — India, USA & UAE\n💰 Revenue Forecasting\n\nWhich area interests you most?',
   results:'Some recent highlights:\n\n📈 NexaScale: 3× Revenue in 90 days\n🎯 SaaSify: 18% → 54% conversion rate\n🌍 LogiTech Gulf: UAE market in 8 weeks\n⚡ MedTech: 80% follow-ups automated\n\n<a href="#testimonials" onclick="closeWABot()" style="color:#4ADE80">See all client stories →</a>'
 };
@@ -1059,7 +1059,7 @@ function initWABot(){
 function appendWAMsg(from,html){const body=document.getElementById('wa-bot-body');if(!body)return;const w=document.createElement('div');w.className='wa-msg-wrap wa-'+from;const b=document.createElement('div');b.className='wa-bubble';b.innerHTML=html;w.appendChild(b);body.appendChild(w);body.scrollTop=body.scrollHeight;}
 function renderWAQRs(){const body=document.getElementById('wa-bot-body');if(!body)return;const qr=document.createElement('div');qr.className='wa-quick-replies';waQRs.forEach(q=>{const btn=document.createElement('button');btn.className='wa-qr-btn';btn.textContent=q.label;btn.onclick=()=>{sendWAReply(q.label,q.key);qr.remove()};qr.appendChild(btn)});body.appendChild(qr);body.scrollTop=body.scrollHeight;}
 function sendWAReply(label,key){appendWAMsg('user',label);const body=document.getElementById('wa-bot-body');const typing=document.createElement('div');typing.className='wa-msg-wrap wa-bot';typing.id='wa-typing';typing.innerHTML='<div class="wa-bubble wa-typing-dots"><span></span><span></span><span></span></div>';if(body){body.appendChild(typing);body.scrollTop=body.scrollHeight;}setTimeout(()=>{const t=document.getElementById('wa-typing');if(t)t.remove();appendWAMsg('bot',waBotReplies[key]||'Thanks! We\'ll get back to you shortly.');setTimeout(()=>{appendWAMsg('bot','Anything else I can help with?');setTimeout(renderWAQRs,300);},700);},1400);}
-function sendWAInput(){const inp=document.getElementById('wa-input');if(!inp||!inp.value.trim())return;const txt=inp.value.trim();inp.value='';appendWAMsg('user',txt);setTimeout(()=>appendWAMsg('bot','Thanks! For instant help, reach us on WhatsApp: <a href="https://wa.me/918072990862" target="_blank" style="color:#4ADE80">+91 98765 43210</a>'),1000);}
+function sendWAInput(){const inp=document.getElementById('wa-input');if(!inp||!inp.value.trim())return;const txt=inp.value.trim();inp.value='';appendWAMsg('user',txt);setTimeout(()=>appendWAMsg('bot','Thanks! For instant help, reach us on WhatsApp: <a href="https://wa.me/918072990862" target="_blank" style="color:#4ADE80">+91 80729 90862</a>'),1000);}
 document.getElementById('wa-input').addEventListener('keydown',e=>{if(e.key==='Enter')sendWAInput();});
 
 /* ── EDIT MODE ── */
